@@ -16,20 +16,21 @@ class movie {
         $this ->boxOffice = $_boxOffice;
         $this ->year = $_year;
      }
-    // dichiaro un metodo
-    public function yearsExit($currentYear){
-        $currentYear = $currentYear - $this->year;
-        return $currentYear;
-    }
-    public function print(){
-        echo "Titolo: {$this->title} <br>";
-        echo "Genere: {$this->genre} <br>";
-        echo "Regista{$this->director} <br>";
-        echo "Box-Office {$this->boxOffice} <br>";
-        echo "Anno di Uscita {$this->year} <br>";
+    // dichiaro un metodo per stampare le informazioni del film
+    public function getDescription(){
+        return "{$this->title} ({$this->year}), diretto da {$this->director}, è un film di genere {$this->genre}.";
     }
 
 }
+// istanze di tre oggetti della classe movie.pphp
 $movie1 = new movie('Alien' , 'Horror', 'Ridley Scott', '78.900.000' ,'1979' );
 $movie2 = new movie('Top Gun ', 'Azione' , 'Tony Scott' , '357.000.000', '1986' );
 $movie3 = new movie('Avengers' , 'Azione' , 'Joss Whedon' , '2.798.000.000', '2012' );
+
+//stampa dettagli dei film
+echo $movie1 ->getDescription();
+echo $movie2 ->getDescription();
+echo $movie3 ->getDescription();
+
+
+
